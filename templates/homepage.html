@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/style1.css" />
+    <title>Delicious Bites | Home</title>
+
+</head>
+<body>
+
+   {% include 'header.html' %}
+
+    <main>
+<div class="intro">
+        <div class="imghero">
+            <img src="/static/Homeimg.jpg" alt="..." style="width: 100%; height: 100%; object-fit: cover;"></div>
+
+            <div class="booking-form">
+
+                <h2>Book a Table</h2>
+                <form action="/submit_booking" method="POST">
+                    {% csrf_token %}
+
+                    <label for="name">Full Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="guests">Number of Guests:</label><br>
+                    <input type="number" id="guests" name="guests" min="1" required><br><br>
+
+                    <label for="date">Date:</label><br>
+                    <input type="date" id="date" name="date" required><br><br>
+
+                    <label for="time">Time:</label><br>
+                    <input type="time" id="time" name="time" required><br><br>
+
+                    <label for="requests">Special Requests:</label><br>
+                    <textarea id="requests" name="requests" rows="3" placeholder="Any special instructions..."></textarea><br><br>
+
+                    <button type="submit">Book Now</button>
+                </form>
+            </div>
+
+        </div>
+    <br />
+<br />
+        <div class="f1">
+            <p>
+                Welcome to Delicious Bites, where tradition meets flavor. We serve handcrafted dishes using the freshest local ingredients.Join us for an unforgettable culinary experience in a warm, inviting atmosphere
+            </p>
+            <img src="/static/Unsplash.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+<br />
+<br />
+        <!-- Review Section (3 Columns) -->
+        <div class="review-section" style="display: flex; gap: 20px; margin: 10px;
+            background-color: rgba(128,128,128,.4);
+            padding:10px;
+            border-radius:5px;
+            ">
+            <!-- Restaurant Images -->
+            <div style="flex: 1; text-align: center; width:400px">
+                <h3>Our Restaurant</h3>
+                <img src="/static/Unsplash1.jpg" alt="Restaurant Image 1" style="width: 100%; height:90%; object-fit:cover; border-radius: 8px; margin-bottom: 10px;">
+
+            </div>
+
+            <!-- Review Form -->
+            <div style="flex: 1; max-width: 300px;">
+                <h3 style="text-align: center;">Leave a Review</h3>
+                <form action="/submit_review" method="POST">
+                    {% csrf_token %}
+                    <label for="reviewer">Your Name</label>
+                    <input type="text" id="reviewer" name="reviewer" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 6px; border: 1px solid #ccc;">
+
+                    <label for="review">Your Review</label>
+                    <textarea id="review" name="review" rows="4" placeholder="Write your feedback..." style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 6px; border: 1px solid #ccc;"></textarea>
+
+                    <button type="submit" style="width: 100%; padding: 10px; border: none; background-color: #4CAF50; color: white; border-radius: 6px; font-size: 15px;">Submit Review</button>
+                </form>
+            </div>
+
+            <!-- Visitor Reviews -->
+            <div style="flex: 1;">
+                <h3 style="text-align: center;">Guest Reviews</h3>
+                 {% for a in data %}
+                <div style="background-color: #f4f4f4; padding: 10px; border-radius: 8px; margin: 10px;">
+                    <strong>{{a.reviewer}}</strong><br>
+                    <small>{{a.review}}</small>
+                </div>
+                {% endfor %}
+               <!-- <div style="background-color: #f4f4f4; padding: 10px; border-radius: 8px;">
+                    <strong>Mike L.</strong><br>
+                    <small>“Service was quick and friendly. Will visit ”</small>
+                </div>-->
+            </div>
+
+        </div>
+
+<br />
+
+        <!-- Contact Section -->
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>
+                <strong>Address:</strong> 123 Flavor Street, Foodie City, FC 12345
+            </p>
+            <p>
+                <strong>Phone:</strong> (123) 456-7890
+            </p>
+            <p>
+                <strong>Email:</strong> contact@restaurant.com
+            </p>
+            <p>
+                <strong>Hours:</strong> Mon–Sun: 11 AM – 10 PM
+            </p>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2025 Delicious Bites. All rights reserved.
+        </p>
+        <div class="ftrcont">
+            <ul class="ftr">
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Rooms</a></li>
+            </ul>
+            <ul class="ftr">
+                <li><a href="#">Party</a></li>
+                <li><a href="#">Reviews</a></li>
+            </ul>
+            <ul class="ftr">
+                <li><a href="#">Privacy policies</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+        <p>
+            123 Food Street, Flavor Town | Call: (123) 456-7890
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu | Delicious Bites</title>
+  <link rel="stylesheet" href="/static/style1.css"/>
+  <link rel="stylesheet" href="/static/menu.css" />
+  
+</head>
+<body>
+    {% include 'header.html'%}
+
+  <h1 class="h">Our Menu</h1>
+
+  <section class="menu-category">
+    <h2 class="category-title">Vegetarian Dishes 🌱</h2>
+{% for t in items %}
+    {% if t.variant == "v" %}
+    <div class="menu-item veg">
+      <h3>{{t.title}}</h3>
+      <p class="price">₹{{t.price}}</p>
+      <p>{{t.about}}</p>
+      <p class="ingredients">Ingredients: {{t.ingredients}}</p>
+      {% if t.badge %}
+      <div class="badge">{{t.badge}}</div>
+      {%endif%}
+    </div>
+    {% endif %}
+{% endfor %}
+    <div class="menu-item veg">
+      <h3>Veg Biryani</h3>
+      <p class="price">₹220</p>
+      <p>Aromatic rice with fresh vegetables and Indian spices.</p>
+      <p class="ingredients">Ingredients: Basmati Rice, Vegetables, Saffron, Herbs</p>
+    </div>
+    <div class="menu-item veg">
+      <h3>Paneer Tikka</h3>
+      <p class="price">₹250</p>
+      <p>Grilled paneer cubes marinated in spicy yogurt.</p>
+      <p class="ingredients">Ingredients: Paneer, Yogurt, Spices, Bell Peppers</p>
+      <div class="badge">20% OFF</div>
+    </div>
+  </section>
+
+  <section class="menu-category">
+    <h2 class="category-title">Non-Vegetarian Dishes 🍗</h2>
+
+    {% for t in items %}
+    {% if t.variant == "nv" %}
+    <div class="menu-item non-veg">
+      <h3>{{t.title}}</h3>
+      <p class="price">₹{{t.price}}</p>
+      <p>{{t.about}}</p>
+      <p class="ingredients">Ingredients: {{t.ingredients}}</p>
+      {% if t.badge %}
+      <div class="badge">{{t.badge}}</div>
+      {%endif%}
+    </div>
+    {% endif %}
+{% endfor %}
+
+
+
+    <div class="menu-item non-veg">
+      <h3>Butter Chicken</h3>
+      <p class="price">₹320</p>
+      <p>Creamy tomato-based chicken curry.</p>
+      <p class="ingredients">Ingredients: Chicken, Cream, Tomato, Butter, Spices</p>
+      <div class="badge">Chef's Special</div>
+    </div>
+
+    <div class="menu-item non-veg">
+      <h3>Mutton Rogan Josh</h3>
+      <p class="price">₹380</p>
+      <p>Rich Kashmiri mutton curry with spices.</p>
+      <p class="ingredients">Ingredients: Mutton, Yogurt, Ginger, Garlic, Spices</p>
+    </div>
+  </section>
+  {% include 'footer.html'%}
+
+
+</body>
+</html>

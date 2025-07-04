@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservation | Delicious Bites</title>
+    <link rel="stylesheet" href="/static/reservation.css" />
+    <link rel="stylesheet" href="/static/style1.css" />
+    <style>
+
+    </style>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <div class="container">
+        <h1>Book Your Table 🍽️</h1>
+
+        <form action="/submit_booking" id="reservation-form" method="POST">
+            {% csrf_token %}
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" min="1" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="requests">Special Requests:</label>
+            <textarea id="requests" name="requests" rows="3" placeholder="Any special instructions..."></textarea><br><br>
+
+            <button type="submit">Book Now</button>
+        </form>
+
+        <div class="code-box" id="refer">
+            Booking Successful ✔ <br>
+            <strong>Reservation Code:</strong> <span id="booking_code">{{code}}</span><br>
+            Please keep this code for changes or cancellations.
+        </div>
+
+        <div class="offers">
+            <h2>Special Offers & Attractions 🎉</h2>
+            <div class="offer-item">
+                <strong>Free Dessert</strong> with every table of 4+ guests!
+            </div>
+            <div class="offer-item">
+                <strong>20% Off</strong> on all reservations before 6 PM (Mon–Fri)
+            </div>
+            <div class="offer-item">
+                <strong>Live Music Nights</strong> every Saturday from 7 PM.
+            </div>
+        </div>
+
+        <div class="cancel">
+            <h2>Cancel Reservation</h2>
+            <form action="/cancel_booking" id="cancel-form" method="POST">
+                {% csrf_token %}
+                <input type="text" name='code' placeholder="Enter Your Booking Code" required>
+                <button type="submit">Cancel Reservation</button>
+            </form>
+            {% if messages %}
+            {% for message in messages %}
+            <h2 id="msg">{{ message }}</h2>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="refund-policy">
+            <h2>Refund Policy</h2>
+            <p>
+                ✔ Full refund for cancellations made at least 12 hours before reservation time.
+            </p>
+            <p>
+                ✔ 50% refund for cancellations within 12 hours.
+            </p>
+            <p>
+                ❌ No refund for no-shows without cancellation.
+            </p>
+            <p>
+                Refunds will be processed within 5–7 business days.
+            </p>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+
+</body>
+</html>

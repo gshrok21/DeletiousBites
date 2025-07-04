@@ -1,0 +1,72 @@
+ body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #333;
+      padding: 20px;
+    }
+
+   body .h {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #c62828;
+    }
+
+    .menu-category {
+      margin-bottom: 40px;
+    }
+
+    .category-title {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #444;
+      border-bottom: 2px solid #c62828;
+      padding-bottom: 5px;
+    }
+
+    .menu-item {
+      border: 1px solid #ddd;
+      border-left: 5px solid #c62828;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .menu-item.veg {
+      border-left-color: green;
+    }
+
+    .menu-item.non-veg {
+      border-left-color: red;
+    }
+
+    .menu-item h3 {
+      margin: 0 0 5px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #c62828;
+    }
+
+    .ingredients {
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    .badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: orange;
+      color: white;
+      padding: 5px 10px;
+      font-size: 0.8em;
+      border-radius: 3px;
+    }
+
+    @media (max-width: 600px) {
+      .menu-item {
+        font-size: 0.95em;
+      }
+    }

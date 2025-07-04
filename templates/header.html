@@ -1,0 +1,25 @@
+<header>
+    <h1 style="color:white;">Delicious Bites</h1>
+    <nav>
+        <ul>
+            <li><a href="/homepage">Home</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/reservation">Reservations</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+   
+    <div class="button">
+{% if request.user.is_authenticated %}
+        <p>WELCOME</br>{{request.user.first_name}}</p>
+             {%endif%}
+        {% if request.user.is_authenticated %}
+        <button type="button" onclick="window.location.href='/logout_page'">Logout</button>
+        {% else %}
+        <button type="button" onclick="window.location.href='/submit_registration'">Register</button>
+        <button type="button" onclick="window.location.href='/login_page'">Login</button>
+        {% endif %}
+    </div>
+
+</header>

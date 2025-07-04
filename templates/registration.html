@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-image: url('/static/Register.jpg');
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+  background-blend-mode: darken;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+    form {
+      max-width: 440px;
+      margin: auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 10px;
+     
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 95%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    label {
+  font-weight: bold;
+}
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">Registration Form</h2>
+
+  <form action="/submit_registration" method="post">
+      {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    
+    <label for="fname">Fullname:</label>
+    <input type="text" id="fname" name="fname" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="pass1" required>
+    
+    <label for="password">Confirm Password:</label>
+    <input type="password" id="password" name="pass2" required>
+{% for message in messages %}
+<p>{{message}}</p>
+{% endfor %}
+
+    <input type="submit" value="Register">
+  </form>
+</body>
+</html>
