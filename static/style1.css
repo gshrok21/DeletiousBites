@@ -1,222 +1,192 @@
- * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-       header {
-          display:flex ;
-          justify-content: space-between;
-            margin: 4px;
-            background: #c62828;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            border-radius: 20px;
-            position: relative;
-            z-index: 100;
-
-        }
-        
-    
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .button{
-            text-align: center;
-            display: inline-block;
-            margin: 10px;
-            align-content: center;
-            max-height: 100px;
-            justify-content: space-between;
-            font-size: 5px;
-        }
-        .button button{
-            font-family:Segoe UI;
-            color:green;
-            background:white;
-            box-shadow: 10px;
-            font-weight: bold;
-            border:none;
-            border-radius:5px;
-            font-size:1.2em;
-            padding: 5px;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-            max-height:30px;
-            
-        }
-        
-        main {}
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-
-@media (max-width: 600px) {
-            
-            
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }}
-        .f1 {
-            height: 400px;
-            display: flex;
-            justify-content: center;
-            overflow:visible;
-            margin: 10px;
-        }
-        .f1 p {
-            font-size: 30px;
-            border: 6px solid rgba(128,128,0,.9);
-            padding: 50px;
-            border-radius: 10px;
-            background-color: rgba(128,128,128,.1);
-            color: rgba(128,0,0,.9);
-            max-width: 60%;
-            font-family: cursive;
-            font-optical-sizing: auto;
-            font-weight: bold;
-             overflow-y: auto;
-        }
-        
-        .f1 img {
-
-            border-radius: 10px;
-            margin-left: 10px;:;
-        }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
 
 
-        .ftrcont {
 
-            display: flex;
-            justify-content: space-evenly;
+main {}
 
-        }
+.f1 {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    margin: 10px;
+}
+.f1 p {
+    font-size: 30px;
+    border: 6px solid rgba(128,128,0,.9);
+    padding: 50px;
+    border-radius: 10px;
+    background-color: rgba(128,128,128,.1);
+    color: rgba(128,0,0,.9);
+    max-width: 60%;
+    font-family: cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    overflow-y: auto;
+}
 
-        .ftr {
-            list-style: none;
-        }
-        .ftr a {
-            text-decoration: none;
-            color: white;
-        }
+.f1 img {
 
-.intro{
+    border-radius: 10px;
+    margin-left: 10px;:;
+}
+
+
+
+
+.intro {
     display: flex;
 }
-        .imghero {
-            height: 500px;
-            width: 65%;
-            margin: 20px;
-            border-radius: 10px;
-            padding: 1px;
-            border: 5px solid rgba(128,128,128,.5);
-            margin-right: 30px;
-            
-        }
-        .imghero img {
-        
-            margin: 20px;
-            border-radius: 10px;
-            object-fit: cover;
-            
-        }
+.imghero {
+    height: 500px;
+    width: 60%;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 1px;
+    border: 5px solid rgba(128,128,128,.5);
+    margin-right: 30px;
 
 
-        .booking-form {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            width: 500px;
-            height: 500px;
-            overflow-y: auto;
-            box-sizing: border-box;
-        }
+}
+.imghero img {
 
-        .booking-form h2 {
-            margin-bottom: 20px;
-            color: #333;
-            font-size: 24px;
-            text-align: center;
-        }
+    margin: 20px;
+    border-radius: 10px;
+    object-fit: cover;
 
-        .booking-form label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 600;
-            color: #555;
-        }
 
-        .booking-form input,
-        .booking-form textarea {
-            width: 100%;
-            padding: 10px 14px;
-            margin-bottom: 16px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-            background-color: #f9f9f9;
-            transition: border-color 0.2s ease;
-        }
+}
 
-        .booking-form input:focus,
-        .booking-form textarea:focus {
-            border-color: #a1c4fd;
-            outline: none;
-            background-color: #fff;
-        }
 
-        .booking-form button {
-            width: 100%;
-            padding: 12px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 16px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+.booking-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 500px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    margin-left: 10px;
+    margin-right: 10px;
 
-        .booking-form button:hover {
-            background-color: #45a049;
-        }
-        .contact-info{
-            margin: 10px;
-            background-color: rgba(128,128,128,.4);
-            text-align: center;
-            border: 5px dashed grey;
-            border-radius: 6px;
-            
-        }
-        .contact-info p {
-            margin: 6px ;
-            font-size: 15px;
-            color: #444;
-        }
 
-        .contact-info strong {
-            display: inline-block;
-            width: 80px;
-        }
+}
+
+.booking-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #555;
+}
+
+.booking-form input,
+.booking-form textarea {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s ease;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus {
+    border-color: #a1c4fd;
+    outline: none;
+    background-color: #fff;
+}
+
+.booking-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.booking-form button:hover {
+    background-color: #45a049;
+}
+.contact-info {
+    margin: 10px;
+    background-color: rgba(128,128,128,.4);
+    text-align: center;
+    border: 5px dashed grey;
+    border-radius: 6px;
+
+}
+.contact-info p {
+    margin: 6px;
+    font-size: 15px;
+    color: #444;
+}
+
+.contact-info strong {
+    display: inline-block;
+    width: 80px;
+}
+
+@media (max-width:600px) {
+    .intro {
+        display: block;
+        max-width: 100vw;
+
+    }
+
+    .imghero {
+
+        margin: 0;
+        width: 98vw;
+        border-radius: 10px;
+
+    }
+    .imghero img {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        object-fit: cover;
+    }
+
+    .booking-form {
+        width: 98vw;
+        margin: auto;
+    }
+    .f1 {
+        display:inline-block;
+        flex-direction: column;
+     
+    }
+   .f1 p{
+       
+      height: 100%;
+      margin:auto;
+   }
+   .f1 img{
+       width: 98%;
+       margin:5px;
+   }
+}

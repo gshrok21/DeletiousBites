@@ -1,0 +1,122 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+header {
+          display:flex;
+          justify-content: space-between;
+            background: #c62828;
+            color: white;
+            margin:0.9%;
+            padding:1%;
+            border-radius: 20px;
+            position: relative;
+            z-index: 100;
+            width:98vw;
+        }
+        
+    
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .button{
+            text-align: center;
+            display:flex;
+            flex-direction: row;
+            align-content: center;
+            max-height: 100px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .button button{
+            font-family:Segoe UI;
+            color:green;
+            background:white;
+            box-shadow: 10px;
+            font-weight: bold;
+            border:none;
+            border-radius:5px;
+            font-size:1.2em;
+            padding: 5px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            max-height:30px;
+            margin-left:4px;
+        }
+        .button p{
+            flex-direction:row;
+        }
+        .hamburger {
+        display: none;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+        
+        @media (max-width:600px) {
+        header {
+            background-color: #c62828;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            align-items: center;
+
+        }
+
+        .hamburger {
+            display: block;
+            margin: 10px;
+        }
+
+        nav {
+            position: absolute;
+            top: 100%;
+            left: -70%;
+            height: auto;
+            width: 30%;
+            background: rgba(255, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            transition: left 0.3s ease;
+            z-index: 1;
+        }
+
+        nav.open {
+            left: 0;
+        }
+
+        nav ul {
+            flex-direction: column;
+            gap: 0.5em;
+            width: 100%;
+        }
+
+        nav ul li {
+            width: 100%;
+        }
+
+        nav ul li a {
+            color: black;
+            font-size: 1.2em;
+            display: block;
+            padding: 0.5em 0;
+            width: 100%;
+        }
+    }

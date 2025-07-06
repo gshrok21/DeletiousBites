@@ -96,13 +96,13 @@ def login_page(request):
                 messages.error(request,'Invalid Password')
             else:
                 login(request,user)
-                return redirect("/homepage/")
+                return redirect("/")
     return render(request,'login.html')
     
     
 def logout_page(request):
     logout(request)
-    return redirect('/homepage/')
+    return redirect('/')
             
     
     

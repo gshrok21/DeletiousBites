@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('homepage/',views.homepage),
+    path('',views.homepage),
     path('menu/',views.menu),
     path('reservation/',views.reservation,name='reservation'),
     path('submit_booking',views.submit_booking),
@@ -31,6 +31,4 @@ urlpatterns = [
     path('submit_registration',views.submit_registration),
     path('login_page',views.login_page),
     path('logout_page',views.logout_page)
-]
-if settings.DEBUG:
-    urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

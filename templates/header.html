@@ -1,8 +1,13 @@
+<link rel="stylesheet" href="/static/header.css"/>
+
 <header>
-    <h1 style="color:white;">Delicious Bites</h1>
-    <nav>
+    <div class="hamburger" onclick="toggleNav()">
+        &#9776;
+    </div>
+    <h1 style="color:white; font-size:1.5em;">Delicious Bites</h1>
+    <nav id="mobileNav">
         <ul>
-            <li><a href="/homepage">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/menu">Menu</a></li>
             <li><a href="/reservation">Reservations</a></li>
             <li><a href="#">Contact</a></li>
@@ -23,3 +28,9 @@
     </div>
 
 </header>
+<script>
+    function toggleNav() {
+        const nav = document.getElementById("mobileNav");
+        nav.classList.toggle("open");
+    }
+</script>

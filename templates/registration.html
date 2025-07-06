@@ -39,6 +39,7 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      margin-top: 6px;
     }
     input[type="submit"]:hover {
       background-color: #0056b3;
@@ -69,8 +70,8 @@
     <input type="password" id="password" name="pass2" required>
 {% for message in messages %}
 <p>{{message}}</p>
+<a href="/login_page" style="text-decoration:none;">CLICK HERE to go on Login Page </a>
 {% endfor %}
-
     <input type="submit" value="Register">
   </form>
 </body>

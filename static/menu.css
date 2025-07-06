@@ -1,11 +1,19 @@
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
  body {
       font-family: 'Segoe UI', sans-serif;
       background: #fff;
       color: #333;
-      padding: 20px;
+      padding:0; 
     }
+    
 
-   body .h {
+main{margin:20px;}
+   .h {
       text-align: center;
       margin-bottom: 30px;
       color: #c62828;
