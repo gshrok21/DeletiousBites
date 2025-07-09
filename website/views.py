@@ -14,7 +14,7 @@ def aboutus(request):
     
 def homepage(request):
     data=view_review.objects.all()
-    return render(request,'Index.html',{'data':data})
+    return render(request,'index.html',{'data':data})
     
 def menu(request):
     data=menu_des.objects.all()
